@@ -3,6 +3,8 @@ Bubl: Imagine a social platform that helps students transition from elementary s
 
 User can create an account, join an existing school account, and search for existing bubls to join. They can explore interests through hashtag searches. They can connect with others and share experiences.  
 
+- **All Team members** are to work together to fill out their relevant pieces of the Bubl Technical Design Document (TDD) - https://docs.google.com/document/d/1VpjI7Rp9BRtLEpuDDszcPeO_7V-DhIJEeVC2_hLn8pc/edit
+
 Milestone Guidlines:
 
 Monday
