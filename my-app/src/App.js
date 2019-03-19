@@ -69,39 +69,106 @@
 //   }
   
 
+// import React, { Component } from 'react';
+// 	import { Route } from 'react-router-dom';
+// 	import SavedList from './Schools/SavedList';
+// 	import SchoolList from './Schools/SchoolList';
+// 	import School from './Schools/School';
+// export default class App extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       savedList: []
+//     };
+//   }
+//   addToSavedList = school => {
+//     const savedList = this.state.savedList;
+//     savedList.push(school);
+//     this.setState({ savedList });
+//   };
+//   render() {
+// 	    return (
+// 	      <div>
+// 	        <SavedList list={this.state.savedList} />
+// 	        <div>Replace this Div with your Routes</div>
+// 	        <Route exact path="/" component={SchoolList}/>
+// 		        <Route 
+// 		          path="/schools/:id" 
+// 		          render={props => (
+// 		            <School {...props} addToSavedList={this.addToSavedList} />
+// 		          )}
+// 		        />
+// 	      </div>
+// 	    );
+// 	  }
+// }
+
+
+//Student Profiles
+
 import React, { Component } from 'react';
-	import { Route } from 'react-router-dom';
-	import SavedList from './Schools/SavedList';
-	import SchoolList from './Schools/SchoolList';
-	import School from './Schools/School';
-export default class App extends Component {
-  constructor() {
-    super();
+import axios from 'axios';
+import './App.css';
+import SmurfForm from './StudentForm';
+import Smurfs from './Students';
+import {Route, NavLink} from 'react-router-dom';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      savedList: []
+      students: [],
     };
   }
-  addToSavedList = school => {
-    const savedList = this.state.savedList;
-    savedList.push(school);
-    this.setState({ savedList });
+  
+  componentDidMount(){
+    axios
+    .get(`http://localhost:3000/`)
+    .then( res => {
+      this.setState({
+        students: res.data
+      })
+    })
+    .catch(err => console.log(err))
+  }
+
+  removeStudent = id => {
+    axios
+      .delete(`http://localhost:3000/${id}`)
+      .then(res => {
+        this.setState({students: res.data});
+      })
+      .catch(error => {
+        console.error('NO!', error);
+      });
   };
+
+
   render() {
-	    return (
-	      <div>
-	        <SavedList list={this.state.savedList} />
-	        <div>Replace this Div with your Routes</div>
-	        <Route exact path="/" component={SchoolList}/>
-		        <Route 
-		          path="/schools/:id" 
-		          render={props => (
-		            <School {...props} addToSavedList={this.addToSavedList} />
-		          )}
-		        />
-	      </div>
-	    );
-	  }
+    return (
+      <div className="App">
+               <div className='Nav'>
+          <NavLink exact to="/" activeClassName="activeNavButton">
+            Home
+          </NavLink>
+          <NavLink to="/student-form" activeClassName="activeNavButton">
+            Add New
+          </NavLink>
+        </div>
+        <Route
+        exact path="/student-form"
+        component={StudentForm}
+        />
+        <Route path="/"
+         render={props => (
+          <Students
+          {...props}
+          students={this.state.students}
+          removeStudent={this.removeStudent}
+        />
+        )}/>
+      </div>
+    );
+  }
 }
-
-
 export default App;
