@@ -14,6 +14,8 @@ class Students extends Component {
                     id={student.id}
                     age={student.age}
                     height={student.height}
+                    school={student.school}
+                    hobbies={student.hobbies}
                     key={student.id}
                     removeStudent={this.props.removeStudent}
                   />

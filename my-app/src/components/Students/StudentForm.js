@@ -59,7 +59,7 @@ class StudentForm extends Component {
         />
           <input
           onChange={this.handleInputChange}
-          placeholder="hobbies"
+          placeholder="#hobbies"
           value={this.state.hobbies}
           name="hobbies"
         />
