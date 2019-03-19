@@ -10,14 +10,11 @@ const NavBar = () => {
         <NavLink to="/student-form" activeClassName="activeNavButton">
           Add New Profile
         </NavLink>
-        <NavLink  activeClassName="activeNavButton">
-        LOGIN
+        <NavLink to="/login" activeClassName="activeNavButton">
+        LOGIN 
              </NavLink>
-        <NavLink  activeClassName="activeNavButton">
+        <NavLink  to="/register" activeClassName="activeNavButton">
         SignUp
-             </NavLink>
-        <NavLink  activeClassName="activeNavButton">
-        LOGOUT
              </NavLink>
       </div>
     )

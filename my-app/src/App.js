@@ -46,10 +46,10 @@ class App extends Component {
       <div className="App">
          <NavBar/>
         <Route
-        exact path="/student-form"
+         path="/student-form"
         component={StudentForm}
         />
-        <Route path="/"
+        <Route exact path="/"
          render={props => (
           <Students
           {...props}
