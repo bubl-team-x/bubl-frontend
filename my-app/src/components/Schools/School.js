@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 	import axios from 'axios';
-	import MovieCard from './SchoolCard.js';
+	import SchoolCard from './SchoolCard.js';
 	
 	export default class School extends Component {
 	  constructor(props) {
@@ -18,7 +18,7 @@ import React, { Component } from 'react';
 	
   fetchSchool = id => {
     axios
-      .get(`http://localhost:5000/api/schools/${id}`)
+      .get(`http://localhost:3000/${id}`)
       .then(response => {
         this.setState(() => ({ school: response.data }));
       })

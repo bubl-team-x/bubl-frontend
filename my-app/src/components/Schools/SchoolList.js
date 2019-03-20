@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 	import axios from 'axios';
 	import { Link } from 'react-router-dom'
-	import SchoolCard from './SchoolCard';
+  import SchoolCard from './SchoolCard';
+  
 	export default class SchoolList extends Component {
 	  constructor(props) {
 	    super(props);
@@ -13,7 +14,7 @@ import React, { Component } from 'react';
 	  componentDidMount() {
 	    console.log(this.state.schools.map(school => school))
 	    axios
-	      .get('http://localhost:5000/api/schools')
+	      .get('http://localhost:3000/')
 	      .then(response => {
         this.setState(() => ({ schools: response.data }));
       })
