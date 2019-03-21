@@ -8,6 +8,11 @@ import NavBar from './components/NavBar/NavBar';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Bubbles from './components/bubbles/bubbles';
+import Home from './components/auth/Home';
+import SchoolCard from './components/Schools/SchoolCard';
+import SchoolList from './components/Schools/SchoolList';
+
+
 
 
 class App extends Component {
@@ -51,7 +56,7 @@ class App extends Component {
          path="/student-form"
         component={StudentForm}
         />
-        <Route exact path="/"
+        <Route exact path="/student-form"
          render={props => (
           <Students
           {...props}
@@ -62,6 +67,8 @@ class App extends Component {
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
         <Route path='/bubbles' component={Bubbles} />
+        <Route exact path='/' component={Home} />
+        <Route path='/school-card' component={SchoolCard} />
 
       </div>
     );

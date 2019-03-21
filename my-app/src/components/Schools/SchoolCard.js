@@ -5,13 +5,15 @@ import React from 'react';
 	  return(
 		    <div className="school-card">
 		      <h2>{props.name}</h2>
+					
 		      <div className="school-princeple">
 		        Princeple: <em>{props.princeple}</em>
 		      </div>
+					
 		      <div className="school-metascore">
-		        Metascore: <strong>{props.metascore}</strong>
+		        Metascore: <h3>{props.metascore}</h3>
 		      </div>
-		      <h3>Teachers</h3>
+		      
 	
 		      {props.grade.map(grade => (
 		        <div key={grade} className="school-grade">

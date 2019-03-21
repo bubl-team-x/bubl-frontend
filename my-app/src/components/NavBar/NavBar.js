@@ -20,6 +20,9 @@ const NavBar = () => {
         <NavLink  to="/register" activeClassName="activeNavButton">
         SignUp
              </NavLink>
+        <NavLink to="/school-card" activeClassName="activeNavButton">
+          Schools
+        </NavLink>
       </div>
     )
 }
