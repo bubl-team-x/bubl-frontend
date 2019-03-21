@@ -7,6 +7,10 @@ const NavBar = () => {
         <NavLink exact to="/" activeClassName="activeNavButton">
           Home
         </NavLink>
+        <NavLink to="/bubbles" activeClassName="activeNavButton">
+        Bubble Interests
+        </NavLink>
+
         <NavLink to="/student-form" activeClassName="activeNavButton">
           Add New Profile
         </NavLink>
