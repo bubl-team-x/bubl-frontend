@@ -4,12 +4,14 @@ import './App.css';
 import StudentForm from './components/Students/StudentForm';
 import Students from './components/Students/Student';
 import {Route} from 'react-router-dom';
-import NavBar from './components/NavBar/NavBar'
-import Login from './components/auth/Login'
-import Register from './components/auth/Register'
-import Home from './components/auth/Home'
+import NavBar from './components/NavBar/NavBar';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import Bubbles from './components/bubbles/bubbles';
+import Home from './components/auth/Home';
 import SchoolCard from './components/Schools/SchoolCard';
 import SchoolList from './components/Schools/SchoolList';
+
 
 
 
@@ -49,6 +51,7 @@ class App extends Component {
     return (
       <div className="App">
          <NavBar/>
+         {/* <Bubbles/> */}
         <Route
          path="/student-form"
         component={StudentForm}
@@ -63,6 +66,7 @@ class App extends Component {
         )}/>
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
+        <Route path='/bubbles' component={Bubbles} />
         <Route exact path='/' component={Home} />
         <Route path='/school-card' component={SchoolCard} />
 
